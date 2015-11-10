@@ -24,6 +24,20 @@ class GeoPostalCode {
 
 	/**
 	 * @var string
+	 * @ORM\Column(name="city_name", type="string", length=255, nullable=false)
+	 * @Assert\NotBlank
+	 */
+	protected $cityName;
+
+	/**
+	 * @var string
+	 * @ORM\Column(name="province_name", type="string", length=255, nullable=false)
+	 * @Assert\NotBlank
+	 */
+	protected $provinceName;
+
+	/**
+	 * @var string
 	 * @Assert\NotBlank
 	 */
 	protected $postalCode;
@@ -52,6 +66,10 @@ class GeoPostalCode {
 		return $this->country;
 	}
 
+	public function getCityName() {
+		return $this->cityName;
+	}
+
 	public function setPostalCode($postalCode) {
 		$this->postalCode = $postalCode;
 	}
@@ -64,6 +82,10 @@ class GeoPostalCode {
 		$this->lat = $lat;
 	}
 
+	public function setCityName($cityName) {
+		$this->cityName = $cityName;
+	}
+
 	public function getLat() {
 		return $this->lat;
 	}
@@ -74,6 +96,22 @@ class GeoPostalCode {
 
 	public function getLng() {
 		return $this->lng;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function getProvinceName()
+	{
+		return $this->provinceName;
+	}
+
+	/**
+	 * @param string $provinceName
+	 */
+	public function setProvinceName($provinceName)
+	{
+		$this->provinceName = $provinceName;
 	}
 
 }
