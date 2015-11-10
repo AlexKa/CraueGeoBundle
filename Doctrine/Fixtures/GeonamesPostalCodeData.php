@@ -62,6 +62,8 @@ abstract class GeonamesPostalCodeData implements FixtureInterface {
 
 			$entity = new GeoPostalCode();
 			$entity->setCountry($country);
+			$entity->setCityName($arr[2]);
+			$entity->setProvinceName($arr[3]);
 			$entity->setPostalCode($postalCode);
 			$entity->setLat((float) $arr[9]);
 			$entity->setLng((float) $arr[10]);
