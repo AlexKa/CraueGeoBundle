@@ -38,6 +38,20 @@ class GeoPostalCode {
 
 	/**
 	 * @var string
+	 * @ORM\Column(name="city_name", type="string", length=255, nullable=false)
+	 * @Assert\NotBlank
+	 */
+	protected $cityName;
+
+	/**
+	 * @var string
+	 * @ORM\Column(name="province_name", type="string", length=255, nullable=false)
+	 * @Assert\NotBlank
+	 */
+	protected $provinceName;
+
+	/**
+	 * @var string
 	 * @Assert\NotBlank
 	 */
 	protected $postalCode;
